@@ -4,34 +4,48 @@
 <head>
 <meta charset="utf-8">
 
-<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/normalize.css" rel="stylesheet" type="text/css">
-<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/webflow.css" rel="stylesheet" type="text/css">
-<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/mylondonguide.webflow.css" rel="stylesheet" type="text/css">
+<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/normalize.css" rel="stylesheet">
+<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/webflow.css" rel="stylesheet">
+<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/mylondonguide.webflow.css" rel="stylesheet">
 
-<!-- SAFE SCROLLBAR FIX (DOES NOT BREAK ANIMATION) -->
 <style>
+
+/* CRITICAL CENTERING FIX */
 
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .page-wrapper {
-  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-wrapper {
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .section-home-hero {
-  overflow-x: hidden;
+  width: 100%;
+}
+
+.hero-component-grid {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.circle-card-wrapper {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 </style>
 
-<!-- Webflow runtime init -->
 <script>
 !function(o,c){
 var n=c.documentElement,t=" w-mod-";
@@ -58,52 +72,52 @@ n.className+=t+"js";
 
 <div class="circle-wrapper">
 
-<!-- KEEP ORIGINAL WEBFLOW STRUCTURE WITH TRANSFORM STYLES -->
+<!-- KEEP YOUR ORIGINAL IMAGE BLOCKS EXACTLY AS THEY WERE -->
 
 <div class="circle-item _01">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo56.jpg" class="card-image">
 </div>
 </div>
 
 <div class="circle-item _02">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo26.jpg" class="card-image">
 </div>
 </div>
 
 <div class="circle-item _03">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo56.jpg" class="card-image">
 </div>
 </div>
 
 <div class="circle-item _04">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo56.jpg" class="card-image">
 </div>
 </div>
 
 <div class="circle-item _05">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo56.jpg" class="card-image">
 </div>
 </div>
 
 <div class="circle-item _06">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo56.jpg" class="card-image">
 </div>
 </div>
 
 <div class="circle-item _07">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo56.jpg" class="card-image">
 </div>
 </div>
 
 <div class="circle-item _08">
-<div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
+<div class="circle-image-wrapper">
 <img src="https://irp.cdn-website.com/a74c8471/dms3rep/multi/photo56.jpg" class="card-image">
 </div>
 </div>
@@ -125,7 +139,4 @@ n.className+=t+"js";
 integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 crossorigin="anonymous"></script>
 
-<script src="https://irp.cdn-website.com/a74c8471/files/uploaded/webflow.js"></script>
-
-</body>
-</html>
+<script src="https://irp.cdn-website.com/a74c8471/fi
