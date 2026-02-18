@@ -8,64 +8,24 @@
 <link href="https://irp.cdn-website.com/a74c8471/files/uploaded/mylondonguide.webflow.css" rel="stylesheet">
 
 <style>
-
-/* ===== REMOVE WEBFLOW EXTRA HEIGHT ===== */
-
 html,body{
 margin:0!important;
 padding:0!important;
 overflow-x:hidden!important;
-height:auto!important;
 }
 
-.page-wrapper,
-.main-wrapper,
+/* keep natural Webflow layout but remove excessive stretching */
 .section-home-hero{
-margin:0!important;
-padding:0!important;
-min-height:0!important;
-height:auto!important;
+min-height:auto!important;
 }
 
-/* Remove grid expansion */
-.hero-component-grid{
-grid-template-rows:auto!important;
-row-gap:0!important;
-margin:0!important;
-}
-
-/* Remove header spacing */
-.padding-top-header,
-.header-content-block,
-.padding-global,
-.container-large{
-margin:0!important;
-padding-top:0!important;
-padding-bottom:0!important;
-}
-
-/* Remove circle spacing */
-.circle-card-wrapper{
-margin:0!important;
-padding:0!important;
-}
-
-.circle-wrapper{
-display:flex!important;
-justify-content:center!important;
-align-items:center!important;
-}
-
-/* ===== HEADLINE ANIMATION STYLES ===== */
-
+/* headline animation base */
 .header-heading{
 color:rgb(0,0,0);
 will-change:transform,color;
 transition:color 0.2s linear;
 display:inline-block;
-margin-bottom:40px;
 }
-
 </style>
 
 <script>
@@ -182,16 +142,10 @@ class="circle-card-wrapper">
 <script src="https://irp.cdn-website.com/a74c8471/files/uploaded/webflow.js"></script>
 
 <script>
-
-/* HEADLINE FLOAT + PARALLAX + COLOUR */
-
 const heading=document.querySelector(".header-heading");
 
 function animate(){
-
 const scrollY=window.scrollY;
-
-/* Smooth colour interpolation */
 const maxScroll=400;
 let progress=scrollY/maxScroll;
 if(progress>1)progress=1;
@@ -199,20 +153,12 @@ if(progress>1)progress=1;
 const colorValue=Math.round(progress*110);
 heading.style.color="rgb("+colorValue+","+colorValue+","+colorValue+")";
 
-/* Parallax */
-const parallaxOffset=scrollY*0.25;
-
-/* Floating */
 const floatOffset=Math.sin(Date.now()*0.001)*6;
-
-heading.style.transform=
-"translate3d(0,"+(parallaxOffset+floatOffset)+"px,0)";
+heading.style.transform="translate3d(0,"+floatOffset+"px,0)";
 
 requestAnimationFrame(animate);
 }
-
 animate();
-
 </script>
 
 </body>
