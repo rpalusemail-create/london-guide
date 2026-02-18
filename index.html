@@ -11,8 +11,15 @@
 .header-heading{
 color:rgb(0,0,0);
 will-change:transform,color;
-transition:color 0.15s linear;
+transition:color 0.2s linear;
 display:inline-block;
+}
+
+/* floating animation */
+@keyframes floatAnimation{
+0%{transform:translate3d(0,0px,0);}
+50%{transform:translate3d(0,-8px,0);}
+100%{transform:translate3d(0,0px,0);}
 }
 </style>
 
@@ -139,16 +146,13 @@ class="circle-card-wrapper">
 
 <script>
 
-/* SAFE SCROLL EFFECTS — DOES NOT BREAK WEBFLOW */
-
 const heading=document.querySelector(".header-heading");
 
-window.addEventListener("scroll",function(){
+function animate(){
 
 const scrollY=window.scrollY;
 
-/* gradual color interpolation */
-
+/* colour interpolation */
 const maxScroll=400;
 let progress=scrollY/maxScroll;
 if(progress>1)progress=1;
@@ -158,12 +162,20 @@ const colorValue=Math.round(progress*110);
 heading.style.color=
 "rgb("+colorValue+","+colorValue+","+colorValue+")";
 
-/* SAFE parallax using translate3d on separate composite layer */
+/* parallax */
+const parallaxOffset=scrollY*0.25;
 
+/* floating */
+const floatOffset=Math.sin(Date.now()*0.001)*8;
+
+/* combine safely */
 heading.style.transform=
-"translate3d(0,"+(scrollY*0.25)+"px,0)";
+"translate3d(0,"+(parallaxOffset+floatOffset)+"px,0)";
 
-});
+requestAnimationFrame(animate);
+}
+
+animate();
 
 </script>
 
