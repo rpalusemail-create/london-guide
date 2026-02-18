@@ -9,43 +9,61 @@
 
 <style>
 
-/* ===== CRITICAL: remove extra Webflow spacing safely ===== */
+/* ===== REMOVE WEBFLOW EXTRA HEIGHT ===== */
 
 html,body{
 margin:0!important;
 padding:0!important;
-height:100%!important;
 overflow-x:hidden!important;
+height:auto!important;
 }
 
+.page-wrapper,
+.main-wrapper,
 .section-home-hero{
+margin:0!important;
+padding:0!important;
+min-height:0!important;
+height:auto!important;
+}
+
+/* Remove grid expansion */
+.hero-component-grid{
+grid-template-rows:auto!important;
+row-gap:0!important;
+margin:0!important;
+}
+
+/* Remove header spacing */
+.padding-top-header,
+.header-content-block,
+.padding-global,
+.container-large{
+margin:0!important;
 padding-top:0!important;
 padding-bottom:0!important;
+}
+
+/* Remove circle spacing */
+.circle-card-wrapper{
 margin:0!important;
-min-height:auto!important;
+padding:0!important;
 }
 
-.padding-top-header{
-padding-top:0!important;
-margin:0!important;
+.circle-wrapper{
+display:flex!important;
+justify-content:center!important;
+align-items:center!important;
 }
 
-.container-large{
-margin-top:0!important;
-padding-top:0!important;
-}
-
-.header-content-block{
-margin-bottom:0!important;
-}
-
-/* ===== headline animation styles ===== */
+/* ===== HEADLINE ANIMATION STYLES ===== */
 
 .header-heading{
 color:rgb(0,0,0);
 will-change:transform,color;
 transition:color 0.2s linear;
 display:inline-block;
+margin-bottom:40px;
 }
 
 </style>
@@ -75,7 +93,6 @@ n.className+=t+"js";
 
 <div class="subtitle-content-wrapper">
 <div class="asterisk">*</div>
-
 <div class="subtitle-wrap">
 <div class="subtitle-item"></div>
 <div class="subtitle-item">
@@ -84,21 +101,17 @@ n.className+=t+"js";
 </div>
 </div>
 </div>
-
 </div>
 
 <h1 data-w-id="ba851431-c950-dcea-7dd0-614d063f7f08"
 style="opacity:0"
 class="header-heading">
-
 crafting unforgettable <span class="featured">london experiences</span>
-
 </h1>
 
 </div>
 </div>
 </div>
-
 </div>
 
 <div class="w-layout-grid hero-component-grid">
@@ -170,7 +183,7 @@ class="circle-card-wrapper">
 
 <script>
 
-/* SAFE headline animation (does not touch circle animation) */
+/* HEADLINE FLOAT + PARALLAX + COLOUR */
 
 const heading=document.querySelector(".header-heading");
 
@@ -178,16 +191,19 @@ function animate(){
 
 const scrollY=window.scrollY;
 
-/* gradual colour interpolation */
+/* Smooth colour interpolation */
 const maxScroll=400;
 let progress=scrollY/maxScroll;
 if(progress>1)progress=1;
+
 const colorValue=Math.round(progress*110);
 heading.style.color="rgb("+colorValue+","+colorValue+","+colorValue+")";
 
-/* floating + parallax */
+/* Parallax */
 const parallaxOffset=scrollY*0.25;
-const floatOffset=Math.sin(Date.now()*0.001)*8;
+
+/* Floating */
+const floatOffset=Math.sin(Date.now()*0.001)*6;
 
 heading.style.transform=
 "translate3d(0,"+(parallaxOffset+floatOffset)+"px,0)";
