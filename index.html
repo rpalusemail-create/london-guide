@@ -4,20 +4,43 @@
 <head>
 <meta charset="utf-8">
 
-<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/normalize.css" rel="stylesheet" type="text/css">
-<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/webflow.css" rel="stylesheet" type="text/css">
-<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/mylondonguide.webflow.css" rel="stylesheet" type="text/css">
+<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/normalize.css" rel="stylesheet">
+<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/webflow.css" rel="stylesheet">
+<link href="https://irp.cdn-website.com/a74c8471/files/uploaded/mylondonguide.webflow.css" rel="stylesheet">
 
-<!-- ONLY SCROLLBAR FIX — DOES NOT TOUCH ANIMATION -->
 <style>
+
+/* ONLY CENTERING FIX — SAFE FOR WEBFLOW */
+
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
+
+/* This is the correct centering method */
+.section-home-hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Keep Webflow grid centered */
+.hero-component-grid {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure wrapper does not shift */
+.circle-card-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 </style>
 
-<script type="text/javascript">
+<script>
 !function(o,c){
 var n=c.documentElement,t=" w-mod-";
 n.className+=t+"js";
@@ -42,7 +65,7 @@ n.className+=t+"js";
 
 <div class="circle-wrapper">
 
-<!-- ORIGINAL STRUCTURE — REQUIRED FOR ANIMATION -->
+<!-- KEEP YOUR ORIGINAL IMAGE BLOCKS EXACTLY -->
 
 <div class="circle-item _01">
 <div style="transform:translate3d(0,0,0);transform-style:preserve-3d" class="circle-image-wrapper">
